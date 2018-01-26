@@ -1,0 +1,52 @@
+<!-- This is a comment -->
+
+<html>
+<head>
+<title>My Map</title>
+
+<!-- Link to Leaflet javascript library (must be link to version 0.7.5 or 0.7.7 for Windy to work-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.js"></script>
+
+<!-- Link to Leaflet CSS stylesheet -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" />
+
+<!-- Custom CSS stylesheet -->
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+
+<body>
+    <div class="map" id="windyty"></div>
+</body>
+
+<script type="text/javascript">
+
+	// Add data from the Windy API
+	var windytyInit = {
+		// Required: API key
+		key: 'PsL-At-XpsPTZexBwUkO7Mx5I',
+
+		// Optional: Initial state of the map (centerpoint and default zoom level)
+		lat: 38.029,
+		lon: -78.484,
+		zoom: 13,
+	}  
+
+    // Required: Windyty main function is called after initialization of API
+    // 'map' creates a new Leaflet map
+    function windytyMain(map) {
+
+    	// Add base map from Mapbox Studio
+	    L.tileLayer('https://api.mapbox.com/styles/v1/reveillette/cjcv4w7sh05ir2snto2fhulo5/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoicmV2ZWlsbGV0dGUiLCJhIjoidmZvYW11SSJ9.2WIhYoRgi7LZF1zOS2xUoA', {
+			minZoom: 10,
+			maxZoom: 17
+		}).addTo(map);  
+
+    }
+
+</script>
+
+<script async defer src="https://api.windytv.com/v2.3/boot.js"></script> 
+
+</html>

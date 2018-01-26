@@ -1,0 +1,12 @@
+/* Remove any spacing around the webpage added by different browsers */
+body {
+ 	margin: 0;
+ 	padding: 0;
+}
+
+/* Make map full width and full height */
+#windyty {    
+ 	width: 100vw;
+ 	height: 100vh;
+ 	position: absolute;
+}
